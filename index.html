@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hatake Kakashi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>xShinchanOpx</h1>
+            <p>[ Student | Developer ]</p>
+        </header>
+
+        <section id="about">
+            <img src="profile-picture.gif" alt="Profile Picture" class="profile-pic">
+            <h2>About Me</h2>
+            <p>Hey, I'm Roshan Singh! I'm a student with a passion for gaming and coding. I enjoy exploring new games and learning about programming languages. My goal is to combine my love for gaming with my skills in programming to create amazing gaming experiences.</p>
+        </section>
+
+        <section id="timer">
+            <h3>Time Since Alive</h3>
+            <div id="timer-display">Loading...</div>
+        </section>
+
+        <section id="games">
+            <h2>Games Played</h2>
+            <div class="game-list">
+                <div class="game-item" data-game="1">
+                    <img src="game1-thumbnail.jpg" alt="Game 1">
+                    <h3>MINECRAFT</h3>
+                </div>
+                <div class="game-item" data-game="2">
+                    <img src="game2-thumbnail.jpg" alt="Game 2">
+                    <h3>BGMI</h3>
+                </div>
+                <div class="game-item" data-game="3">
+                    <img src="game3-thumbnail.jpg" alt="Game 3">
+                    <h3>GTA IV</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>You can reach me through the following platforms:</p>
+            <ul>
+                <li>Email: <a href="mailto:copy.ninja@shinobi.com">copy.ninja@shinobi.com</a></li>
+                <li>GitHub: <a href="https://github.com/copyninja" target="_blank">https://github.com/BeingCopyNinja</a></li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>&lt;/&gt; SHINCAHN.EXE </p>
+        </footer>
+    </div>
+
+    <div id="game-info-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>GAME INFORMATION</h3>
+            <p id="game-info-text"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="timer.js"></script>
+</body>
+</html>
