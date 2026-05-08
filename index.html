@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShadowCoder // Valorant Protocol</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="ultimate-overlay"></div>
+
+    <div class="val-bg"></div>
+
+    <div class="val-card" id="main-card">
+        <div class="header">
+            <div class="dp-frame">
+                <img src="kakashi.gif" alt="CopyNinja">
+            </div>
+            <h1 class="player-id">Silent.Shinobi <i class="fa-solid fa-circle-check" style="color: #00f2ff; font-size: 1.2rem;"></i></h1>
+            <span class="tagline">ARCHITECT // PROTOCOL 07</span>
+        </div>
+
+        <span class="section-label"><i class="fa-solid fa-user-shield"></i> Agent Info // About Me</span>
+        <div class="content-box">
+            Hi, I'm Roshan Singh! Just a student who spends way too much time coding and even more time gaming. 
+            If I'm not fixing bugs, I'm probably smashing a shuttlecock, vibing to music, or getting lost in Anime. 
+            Basically, I build cool stuff and try not to break it. Let’s level up!
+        </div>
+
+        <span class="section-label"><i class="fa-solid fa-cube"></i> Active Mission // Minecraft</span>
+        <div class="grid">
+            <div class="grid-item">
+                <i class="fa-solid fa-dragon"></i>
+                <span>THE END TERMINATOR</span>
+                <span>ENDER DRAGON SLAYED</span>
+            </div>
+            <div class="grid-item">
+                <i class="fa-solid fa-skull"></i>
+                <span>WITHER REAPER</span>
+                <span>NETHER BOSS ERADICATED</span>
+            </div>
+            <div class="grid-item">
+                <i class="fa-solid fa-eye-slash"></i>
+                <span>WARDEN HUNTER</span>
+                <span>DEEP DARK CONQUERED</span>
+            </div>
+            <div class="grid-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>VOID SURVIVOR</span>
+                <span>UNBEATABLE LEGACY</span>
+            </div>
+        </div>
+
+        <span class="section-label"><i class="fa-solid fa-terminal"></i> Tactical Abilities // Coding</span>
+        <div class="skill-wrap">
+            <div class="skill-info"><span><i class="fa-brands fa-js"></i> JavaScript</span><span>75%</span></div>
+            <div class="bar-bg"><div class="bar-fill" style="width: 75%;"></div></div>
+        </div>
+        <div class="skill-wrap">
+            <div class="skill-info"><span><i class="fa-brands fa-html5"></i> HTML & CSS</span><span>65%</span></div>
+            <div class="bar-bg"><div class="bar-fill" style="width: 65%;"></div></div>
+        </div>
+        <div class="skill-wrap">
+            <div class="skill-info"><span><i class="fa-brands fa-python"></i> Python (Basic)</span><span>40%</span></div>
+            <div class="bar-bg"><div class="bar-fill" style="width: 40%;"></div></div>
+        </div>
+
+        <span class="section-label"><i class="fa-solid fa-cake-candles"></i> Next Protocol Update // Birthday</span>
+        <div class="timer-container">
+            <div class="timer-box"><span id="days">00</span><span class="timer-label">Days</span></div>
+            <div class="timer-box"><span id="hours">00</span><span class="timer-label">Hrs</span></div>
+            <div class="timer-box"><span id="minutes">00</span><span class="timer-label">Min</span></div>
+            <div class="timer-box"><span id="seconds">00</span><span class="timer-label">Sec</span></div>
+        </div>
+
+        <div class="stats-split">
+            <div class="stat-card">
+                <span class="stat-main"><i class="fa-solid fa-shuttlecock"></i> BADMINTON</span>
+                <span class="stat-sub">Main Physical Sport</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-main"><i class="fa-solid fa-trophy"></i> 78% SOLO WR</span>
+                <span class="stat-sub">Arena Win Rate</span>
+            </div>
+        </div>
+
+        <button class="footer-btn" id="executeBtn">Execute Protocol <i class="fa-solid fa-bolt-lightning"></i></button>
+    </div>
+
+    <audio id="ultSound" src="https://www.myinstants.com/media/sounds/valorant-ace.mp3"></audio>
+
+    <script>
+        function updateTimer() {
+            const now = new Date();
+            let year = now.getFullYear();
+            let bday = new Date(year, 6, 24); 
+            if (now > bday) bday = new Date(year + 1, 6, 24);
+            
+            const diff = bday - now;
+            document.getElementById('days').innerText = Math.floor(diff / 86400000).toString().padStart(2, '0');
+            document.getElementById('hours').innerText = Math.floor((diff / 3600000) % 24).toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = Math.floor((diff / 60000) % 60).toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = Math.floor((diff / 1000) % 60).toString().padStart(2, '0');
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        const btn = document.getElementById('executeBtn');
+        const overlay = document.getElementById('ultimate-overlay');
+        const card = document.getElementById('main-card');
+        const sound = document.getElementById('ultSound');
+
+        btn.addEventListener('click', () => {
+            sound.currentTime = 0;
+            sound.play();
+
+            btn.classList.add('pulse-active');
+            overlay.classList.add('glitch-active');
+            card.classList.add('shake-active');
+            
+            setTimeout(() => {
+                btn.classList.remove('pulse-active');
+                overlay.classList.remove('glitch-active');
+                card.classList.remove('shake-active');
+            }, 500);
+        });
+    </script>
+</body>
+</html>
